@@ -15,8 +15,6 @@ public class DBServiceTest {
     @Test
     public void saveAndCheckTest(){
         try(DBService service = new DBService(DBService.DB.H2)){
-            service.init();
-
             service.saveUser(User.of(
                     UserLogin.of("login"),
                     UserPassword.of("password")));

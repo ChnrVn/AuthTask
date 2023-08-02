@@ -33,6 +33,7 @@ public class SignUpServlet extends HttpServlet {
                     UserPassword.of(password))
             );
         } catch (AuthenticationException e) {
+            System.out.println(e.getMessage());
             resp.setStatus(507);
         }
     }

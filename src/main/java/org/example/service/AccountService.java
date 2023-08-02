@@ -16,6 +16,7 @@ public class AccountService {
         try {
             return dbService.isExistingLoginPassword(login, password);
         } catch (SQLException e) {
+            System.out.println(e.getMessage());
             throw new AuthenticationException(e.getSQLState());
         }
     }
@@ -23,6 +24,7 @@ public class AccountService {
         try {
             dbService.saveUser(user);
         } catch (SQLException e) {
+            System.out.println(e.getMessage());
             throw new AuthenticationException(e.getSQLState());
         }
     }

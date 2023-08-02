@@ -15,12 +15,10 @@ public class DBService implements AutoCloseable{
             case H2 -> getH2DBConnection();
             case Postgres -> getPostgresConnection();
         };
+
         this.userDAO = new UserDAO(connection);
     }
 
-    public void init() throws SQLException {
-        userDAO.createTable();
-    }
 
     public void saveUser(User user) throws SQLException {
         userDAO.saveUser(user);
